@@ -9,7 +9,7 @@ const hm = (sec) => { const m = Math.round(sec / 60); return `${Math.floor(m / 6
 const pct = (x, d = 1) => (100 * x).toFixed(d) + '%';
 const demo = (op) => 'D-' + String(op + 1).padStart(4, '0');
 const PAGE = 18;
-const BUDGETS = [1, 2, 4, 8];
+const BUDGETS = [1, 2, 4, 8, 16];
 const HOLDS = [0, 2, 4];
 const SAVED_KEY = 'mecka.egoverse.cuts.v1';
 const STATE_KEY = 'mecka.egoverse.state.v1';
@@ -244,6 +244,7 @@ function summaryPane() {
     <div class="eg-detailBlock"><span class="eg-detailBlockLabel">Capture next</span>
       <p class="eg-blockNote">${plan.exhaustedCount} of ${plan.scenes} labeled scenes are fully used by this cut. New footage there from a new demonstrator adds the most diversity per minute.</p>
       <div class="eg-planHead"><span>Scene</span><span>Diversity per new minute</span></div><ol class="eg-planList">${plan.rows.slice(0, 5).map((r) => `<li><span>${esc(pretty(DATA.scenes[r.scene]))}</span>${r.exhausted ? '<span class="eg-statusChip">Exhausted</span>' : ''}<b>${r.perMin.toFixed(2)}</b></li>`).join('')}</ol>
+      <button type="button" class="eg-linkButton eg-planExport" id="eg-plan">${icon('download', 14)}Export capture plan (${plan.all.length} scenes)</button>
     </div>
     <div class="eg-actionRow">
       <button type="button" class="eg-primaryAction" id="eg-save">${icon('bookmark', 16)}Save cut</button>
@@ -325,6 +326,12 @@ function exportCSV() {
   cut.optimal.idx.forEach((j, k) => { const e = F.eps[j]; lines.push([k + 1, e.h, DATA.tasks[e.task], e.scene >= 0 ? DATA.scenes[e.scene] : '', demo(e.op), e.sec.toFixed(2), e.frames, (cut.gain.get(j) || 0).toFixed(4)].map((v) => /[",]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : v).join(',')); });
   download(`egoverse-${F.key}-${st.h}h-${st.obj}.csv`, lines.join('\n'), 'text/csv');
 }
+function exportPlan() {
+  const F = cut.F, rows = cut.plan.all;
+  const lines = ['rank,scene,available_min,used_min,exhausted,diversity_per_new_minute'];
+  rows.forEach((r, i) => lines.push([i + 1, `"${DATA.scenes[r.scene].replace(/"/g, '""')}"`, (r.availSec / 60).toFixed(1), (r.usedSec / 60).toFixed(1), r.exhausted, r.perMin.toFixed(4)].join(',')));
+  download(`capture-plan-${F.key}-${st.h}h-${st.obj}.csv`, lines.join('\n'), 'text/csv');
+}
 function manifest() {
   const F = cut.F, o = cut.optimal;
   return { name: `egoverse-${F.key}-${st.h}h-${st.obj}`, lab: 'mecka', taskFamily: F.label, budgetHours: st.h, objective: { preset: st.obj, weights: cut.w, tauSeconds: TAU, form: 'sum_g w_g * sum_k log(1 + T_k / tau)' }, certificate: { objective: +o.m.f.toFixed(4), upperBound: +o.ub.toFixed(4), gap: +o.gap.toFixed(5) }, metrics: { ...o.m, maxShare: +o.m.maxShare.toFixed(4) }, baselines: { newestFirst: cut.newest.m, randomMean: cut.random.mean }, heldOutDemonstrators: cut.holdOut.ops.map(demo), evalEpisodes: cut.holdOut.eval.map((j) => F.eps[j].h), trainEpisodes: o.idx.map((j) => F.eps[j].h), link: location.href };
@@ -375,6 +382,7 @@ function bind() {
     else if (id === 'eg-csv') exportCSV();
     else if (id === 'eg-json') download(`egoverse-${cut.F.key}-${st.h}h-${st.obj}.json`, JSON.stringify(manifest(), null, 2), 'application/json');
     else if (id === 'eg-save') saveCut();
+    else if (id === 'eg-plan') exportPlan();
     else if (id === 'eg-copy') { navigator.clipboard?.writeText(location.href).then(() => toast('Link copied'), () => toast('Copy the URL from the address bar')); }
     else if (id === 'eg-clearq') { st.q = ''; renderFilters(); renderLayout(); writeHash(); }
     else if (id === 'eg-retry') renderDetail();

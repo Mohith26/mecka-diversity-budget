@@ -6,7 +6,7 @@ import { decodeFamilies, buildCut, PRESETS } from '../src/diversity.js';
 
 const data = JSON.parse(fs.readFileSync(new URL('../data/episodes.json', import.meta.url), 'utf8'));
 const fams = decodeFamilies(data);
-const BUDGETS = [1, 2, 4, 8];
+const BUDGETS = [1, 2, 4, 8, 16];
 const pick = (m) => ({ episodes: m.episodes, hours: +(m.sec / 3600).toFixed(3), demonstrators: m.demonstrators, effDemonstrators: +m.effDemonstrators.toFixed(1), maxShare: +m.maxShare.toFixed(4), scenes: m.scenes, effScenes: +m.effScenes.toFixed(1), pairs: m.pairs, tasks: m.tasks, f: +m.f.toFixed(2) });
 const rows = [];
 const t0 = Date.now();

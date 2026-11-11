@@ -8,10 +8,10 @@ A concept feature for Mecka's [EgoVerse explorer](https://partners.mecka.ai/egov
 
 ## What it does
 
-- **Diversity budget view** next to the explorer's episode table: task family, budget (1, 2, 4 or 8 hours), what to optimize for (unseen demonstrators, novel environments, or balanced), and an optional held-out set of demonstrators for an unseen-demonstrator eval split (the paper's protocol).
+- **Diversity budget view** next to the explorer's episode table: task family, budget (1, 2, 4, 8 or 16 hours, up to half the footage in the family), what to optimize for (unseen demonstrators, novel environments, or balanced), and an optional held-out set of demonstrators for an unseen-demonstrator eval split (the paper's protocol).
 - **Same budget, three ways to fill it:** newest first (what paging the filtered list gives you), a random draw (mean of 50 seeded draws), and the diversity cut, compared on scenes, effective demonstrators (Hill number, exp of Shannon entropy over minutes), demonstrator-scene pairs and the largest single demonstrator's share.
 - **Drill-down:** every pick shows the real clip (streamed from the explorer's public video endpoint), its subtask segments and objects, and *why it is in the cut*: the marginal gain split into new demonstrator, new scene, new pair and new task label at the moment it was added.
-- **Actions:** export the cut as CSV or as a JSON manifest (train hashes, eval hashes, weights, certificate, baselines), save cuts locally, copy a deep link. A "Capture next" list ranks scenes the cut has exhausted by how much diversity a new demonstrator's minute there would add, which is the input a capture-ops team needs.
+- **Actions:** export the cut as CSV or as a JSON manifest (train hashes, eval hashes, weights, certificate, baselines), save cuts locally, copy a deep link. A "Capture next" list ranks scenes the cut has exhausted by how much diversity a new demonstrator's minute there would add, which is the input a capture-ops team needs; the full ranking exports as CSV.
 - Deep links (`#family=packag&h=2&obj=balanced&hold=0&view=cut&ep=...`), localStorage for saved cuts and the last view, light and dark themes from the explorer's own tokens, keyboard shortcuts (`j/k`, `Enter`, `Esc`, `/`, `b`, `v`, `e`, `s`, `[ ]`, `?`), loading, empty and error states.
 
 ## How it works
@@ -26,11 +26,11 @@ where `T_k(S)` is the seconds of footage in the cut that belong to group `k`. Th
 2. **Certificate.** Every episode is atomic, so each group total is either 0 or at least the group's shortest episode `m_k`. Replacing `log(1 + t/tau)` by its chord on `[0, m_k]` gives a concave function that equals `f` at every reachable integral point, so its maximum over the relaxed budget polytope bounds the best integral cut. Frank-Wolfe with exact line search bounds that maximum through its duality gap (the linear step is a fractional knapsack). Without the chord the relaxation splits episodes into slivers and the bound is 15-25% looser. The page reports `1 - f(S) / bound`.
 3. **Baselines** use the same fill rule (take episodes in order while they fit). Random is averaged over 50 seeded shuffles.
 
-Everything runs in the browser in roughly 50-250 ms per build (`src/diversity.js`, no dependencies). `scripts/report.mjs` recomputes all 249 configurations into `results/results.json`, and the tests check that the page's headline matches it.
+Everything runs in the browser in roughly 50-250 ms per build (`src/diversity.js`, no dependencies). `scripts/report.mjs` recomputes all 261 configurations into `results/results.json`, and the tests check that the page's headline matches it.
 
 ## Results (2-hour budget, balanced objective)
 
-Across the 23 families with labeled scenes, the cut covers 47.8 scenes on average against 19.6 for a random draw (2.37x), and 91 effective demonstrators against 49. It beats the 95th-percentile random draw on scenes in 23 of 23 families. Certified gap: median 3.6%, max 5.52%; over all 249 configurations the largest gap is 7.97%.
+Across the 23 families with labeled scenes, the cut covers 47.8 scenes on average against 19.6 for a random draw (2.37x), and 91 effective demonstrators against 49. It beats the 95th-percentile random draw on scenes in 23 of 23 families. Certified gap: median 3.6%, max 5.52%; over all 261 configurations the largest gap is 7.97%.
 
 | Task family | Hours available | Scenes: newest / random / cut | Effective demonstrators: random / cut | Top demonstrator share: random / cut | Certified gap |
 |---|---:|---:|---:|---:|---:|

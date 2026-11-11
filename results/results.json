@@ -2,7 +2,7 @@
  "generatedFrom": "data/episodes.json (2026-11-11)",
  "summary": {
   "families": 24,
-  "configurations": 249,
+  "configurations": 261,
   "balanced2h": {
    "families": 23,
    "scenesRandom": 19.6,
@@ -629,6 +629,156 @@
    "exhaustedScenes": 63
   },
   {
+   "family": "clean",
+   "label": "Cleaning",
+   "budgetH": 16,
+   "preset": "demonstrators",
+   "familyHours": 89.53,
+   "newest": {
+    "episodes": 593,
+    "hours": 15.997,
+    "demonstrators": 218,
+    "effDemonstrators": 134.7,
+    "maxShare": 0.0675,
+    "scenes": 65,
+    "effScenes": 13,
+    "pairs": 250,
+    "tasks": 65,
+    "f": 537.63
+   },
+   "random": {
+    "episodes": 677.68,
+    "hours": 15.997,
+    "demonstrators": 390.16,
+    "effDemonstrators": 292.4,
+    "maxShare": 0.0219,
+    "scenes": 83.28,
+    "effScenes": 26.1,
+    "pairs": 450.22,
+    "tasks": 173.38,
+    "f": 766.31
+   },
+   "randomP95": {
+    "scenes": 92,
+    "effDemonstrators": 319.3
+   },
+   "optimal": {
+    "episodes": 774,
+    "hours": 15.999,
+    "demonstrators": 771,
+    "effDemonstrators": 758.3,
+    "maxShare": 0.0025,
+    "scenes": 137,
+    "effScenes": 46.9,
+    "pairs": 774,
+    "tasks": 313,
+    "f": 1071.42
+   },
+   "ub": 1138.45,
+   "gapPct": 5.89,
+   "exhaustedScenes": 40
+  },
+  {
+   "family": "clean",
+   "label": "Cleaning",
+   "budgetH": 16,
+   "preset": "balanced",
+   "familyHours": 89.53,
+   "newest": {
+    "episodes": 593,
+    "hours": 15.997,
+    "demonstrators": 218,
+    "effDemonstrators": 134.7,
+    "maxShare": 0.0675,
+    "scenes": 65,
+    "effScenes": 13,
+    "pairs": 250,
+    "tasks": 65,
+    "f": 623.36
+   },
+   "random": {
+    "episodes": 677.68,
+    "hours": 15.997,
+    "demonstrators": 390.16,
+    "effDemonstrators": 292.4,
+    "maxShare": 0.0219,
+    "scenes": 83.28,
+    "effScenes": 26.1,
+    "pairs": 450.22,
+    "tasks": 173.38,
+    "f": 875.31
+   },
+   "randomP95": {
+    "scenes": 92,
+    "effDemonstrators": 319.3
+   },
+   "optimal": {
+    "episodes": 767,
+    "hours": 15.997,
+    "demonstrators": 736,
+    "effDemonstrators": 713.5,
+    "maxShare": 0.0043,
+    "scenes": 152,
+    "effScenes": 66.7,
+    "pairs": 762,
+    "tasks": 318,
+    "f": 1236.1
+   },
+   "ub": 1293.32,
+   "gapPct": 4.42,
+   "exhaustedScenes": 62
+  },
+  {
+   "family": "clean",
+   "label": "Cleaning",
+   "budgetH": 16,
+   "preset": "scenes",
+   "familyHours": 89.53,
+   "newest": {
+    "episodes": 593,
+    "hours": 15.997,
+    "demonstrators": 218,
+    "effDemonstrators": 134.7,
+    "maxShare": 0.0675,
+    "scenes": 65,
+    "effScenes": 13,
+    "pairs": 250,
+    "tasks": 65,
+    "f": 389.26
+   },
+   "random": {
+    "episodes": 677.68,
+    "hours": 15.997,
+    "demonstrators": 390.16,
+    "effDemonstrators": 292.4,
+    "maxShare": 0.0219,
+    "scenes": 83.28,
+    "effScenes": 26.1,
+    "pairs": 450.22,
+    "tasks": 173.38,
+    "f": 548.35
+   },
+   "randomP95": {
+    "scenes": 92,
+    "effDemonstrators": 319.3
+   },
+   "optimal": {
+    "episodes": 746,
+    "hours": 15.998,
+    "demonstrators": 639,
+    "effDemonstrators": 590,
+    "maxShare": 0.0074,
+    "scenes": 152,
+    "effScenes": 82.8,
+    "pairs": 722,
+    "tasks": 366,
+    "f": 791.12
+   },
+   "ub": 811.97,
+   "gapPct": 2.57,
+   "exhaustedScenes": 70
+  },
+  {
    "family": "packag",
    "label": "Packaging",
    "budgetH": 1,
@@ -1227,6 +1377,156 @@
    "ub": 450.23,
    "gapPct": 2.99,
    "exhaustedScenes": 43
+  },
+  {
+   "family": "packag",
+   "label": "Packaging",
+   "budgetH": 16,
+   "preset": "demonstrators",
+   "familyHours": 88.69,
+   "newest": {
+    "episodes": 600,
+    "hours": 15.996,
+    "demonstrators": 161,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0597,
+    "scenes": 55,
+    "effScenes": 20.5,
+    "pairs": 200,
+    "tasks": 68,
+    "f": 466.55
+   },
+   "random": {
+    "episodes": 646.48,
+    "hours": 15.996,
+    "demonstrators": 297.98,
+    "effDemonstrators": 199.3,
+    "maxShare": 0.0473,
+    "scenes": 59.98,
+    "effScenes": 19.3,
+    "pairs": 343.36,
+    "tasks": 111.3,
+    "f": 650.57
+   },
+   "randomP95": {
+    "scenes": 67,
+    "effDemonstrators": 213.7
+   },
+   "optimal": {
+    "episodes": 706,
+    "hours": 16,
+    "demonstrators": 690,
+    "effDemonstrators": 676.1,
+    "maxShare": 0.0027,
+    "scenes": 101,
+    "effScenes": 30.7,
+    "pairs": 703,
+    "tasks": 176,
+    "f": 1001.28
+   },
+   "ub": 1074.4,
+   "gapPct": 6.81,
+   "exhaustedScenes": 32
+  },
+  {
+   "family": "packag",
+   "label": "Packaging",
+   "budgetH": 16,
+   "preset": "balanced",
+   "familyHours": 88.69,
+   "newest": {
+    "episodes": 600,
+    "hours": 15.996,
+    "demonstrators": 161,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0597,
+    "scenes": 55,
+    "effScenes": 20.5,
+    "pairs": 200,
+    "tasks": 68,
+    "f": 551.01
+   },
+   "random": {
+    "episodes": 646.48,
+    "hours": 15.996,
+    "demonstrators": 297.98,
+    "effDemonstrators": 199.3,
+    "maxShare": 0.0473,
+    "scenes": 59.98,
+    "effScenes": 19.3,
+    "pairs": 343.36,
+    "tasks": 111.3,
+    "f": 735.72
+   },
+   "randomP95": {
+    "scenes": 67,
+    "effDemonstrators": 213.7
+   },
+   "optimal": {
+    "episodes": 707,
+    "hours": 16,
+    "demonstrators": 676,
+    "effDemonstrators": 654.9,
+    "maxShare": 0.0057,
+    "scenes": 107,
+    "effScenes": 36.3,
+    "pairs": 699,
+    "tasks": 175,
+    "f": 1128.62
+   },
+   "ub": 1204.25,
+   "gapPct": 6.28,
+   "exhaustedScenes": 41
+  },
+  {
+   "family": "packag",
+   "label": "Packaging",
+   "budgetH": 16,
+   "preset": "scenes",
+   "familyHours": 88.69,
+   "newest": {
+    "episodes": 600,
+    "hours": 15.996,
+    "demonstrators": 161,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0597,
+    "scenes": 55,
+    "effScenes": 20.5,
+    "pairs": 200,
+    "tasks": 68,
+    "f": 358.02
+   },
+   "random": {
+    "episodes": 646.48,
+    "hours": 15.996,
+    "demonstrators": 297.98,
+    "effDemonstrators": 199.3,
+    "maxShare": 0.0473,
+    "scenes": 59.98,
+    "effScenes": 19.3,
+    "pairs": 343.36,
+    "tasks": 111.3,
+    "f": 456.29
+   },
+   "randomP95": {
+    "scenes": 67,
+    "effDemonstrators": 213.7
+   },
+   "optimal": {
+    "episodes": 714,
+    "hours": 15.997,
+    "demonstrators": 616,
+    "effDemonstrators": 566.9,
+    "maxShare": 0.0077,
+    "scenes": 107,
+    "effScenes": 46.2,
+    "pairs": 689,
+    "tasks": 184,
+    "f": 692.73
+   },
+   "ub": 724.52,
+   "gapPct": 4.39,
+   "exhaustedScenes": 52
   },
   {
    "family": "assembl",
@@ -1829,6 +2129,156 @@
    "exhaustedScenes": 34
   },
   {
+   "family": "assembl",
+   "label": "Assembling",
+   "budgetH": 16,
+   "preset": "demonstrators",
+   "familyHours": 54.78,
+   "newest": {
+    "episodes": 617,
+    "hours": 16,
+    "demonstrators": 192,
+    "effDemonstrators": 116,
+    "maxShare": 0.0504,
+    "scenes": 50,
+    "effScenes": 17.4,
+    "pairs": 221,
+    "tasks": 78,
+    "f": 502.69
+   },
+   "random": {
+    "episodes": 685.28,
+    "hours": 15.996,
+    "demonstrators": 252.6,
+    "effDemonstrators": 133.8,
+    "maxShare": 0.0729,
+    "scenes": 62.58,
+    "effScenes": 24.2,
+    "pairs": 301.3,
+    "tasks": 132.38,
+    "f": 582.52
+   },
+   "randomP95": {
+    "scenes": 68,
+    "effDemonstrators": 147.5
+   },
+   "optimal": {
+    "episodes": 716,
+    "hours": 15.999,
+    "demonstrators": 485,
+    "effDemonstrators": 446.2,
+    "maxShare": 0.0057,
+    "scenes": 89,
+    "effScenes": 34.3,
+    "pairs": 609,
+    "tasks": 240,
+    "f": 908.75
+   },
+   "ub": 918.66,
+   "gapPct": 1.08,
+   "exhaustedScenes": 35
+  },
+  {
+   "family": "assembl",
+   "label": "Assembling",
+   "budgetH": 16,
+   "preset": "balanced",
+   "familyHours": 54.78,
+   "newest": {
+    "episodes": 617,
+    "hours": 16,
+    "demonstrators": 192,
+    "effDemonstrators": 116,
+    "maxShare": 0.0504,
+    "scenes": 50,
+    "effScenes": 17.4,
+    "pairs": 221,
+    "tasks": 78,
+    "f": 580.24
+   },
+   "random": {
+    "episodes": 685.28,
+    "hours": 15.996,
+    "demonstrators": 252.6,
+    "effDemonstrators": 133.8,
+    "maxShare": 0.0729,
+    "scenes": 62.58,
+    "effScenes": 24.2,
+    "pairs": 301.3,
+    "tasks": 132.38,
+    "f": 674.16
+   },
+   "randomP95": {
+    "scenes": 68,
+    "effDemonstrators": 147.5
+   },
+   "optimal": {
+    "episodes": 714,
+    "hours": 15.999,
+    "demonstrators": 485,
+    "effDemonstrators": 439.6,
+    "maxShare": 0.0079,
+    "scenes": 89,
+    "effScenes": 37.4,
+    "pairs": 608,
+    "tasks": 236,
+    "f": 1031.03
+   },
+   "ub": 1040.22,
+   "gapPct": 0.88,
+   "exhaustedScenes": 44
+  },
+  {
+   "family": "assembl",
+   "label": "Assembling",
+   "budgetH": 16,
+   "preset": "scenes",
+   "familyHours": 54.78,
+   "newest": {
+    "episodes": 617,
+    "hours": 16,
+    "demonstrators": 192,
+    "effDemonstrators": 116,
+    "maxShare": 0.0504,
+    "scenes": 50,
+    "effScenes": 17.4,
+    "pairs": 221,
+    "tasks": 78,
+    "f": 365.29
+   },
+   "random": {
+    "episodes": 685.28,
+    "hours": 15.996,
+    "demonstrators": 252.6,
+    "effDemonstrators": 133.8,
+    "maxShare": 0.0729,
+    "scenes": 62.58,
+    "effScenes": 24.2,
+    "pairs": 301.3,
+    "tasks": 132.38,
+    "f": 433.23
+   },
+   "randomP95": {
+    "scenes": 68,
+    "effDemonstrators": 147.5
+   },
+   "optimal": {
+    "episodes": 710,
+    "hours": 16,
+    "demonstrators": 485,
+    "effDemonstrators": 418.3,
+    "maxShare": 0.0117,
+    "scenes": 89,
+    "effScenes": 39.8,
+    "pairs": 617,
+    "tasks": 245,
+    "f": 652.77
+   },
+   "ub": 667.07,
+   "gapPct": 2.14,
+   "exhaustedScenes": 48
+  },
+  {
    "family": "sort",
    "label": "Sorting",
    "budgetH": 1,
@@ -2427,6 +2877,156 @@
    "ub": 404.06,
    "gapPct": 2.15,
    "exhaustedScenes": 38
+  },
+  {
+   "family": "sort",
+   "label": "Sorting",
+   "budgetH": 16,
+   "preset": "demonstrators",
+   "familyHours": 34.02,
+   "newest": {
+    "episodes": 593,
+    "hours": 16,
+    "demonstrators": 76,
+    "effDemonstrators": 32.8,
+    "maxShare": 0.1297,
+    "scenes": 39,
+    "effScenes": 20.8,
+    "pairs": 106,
+    "tasks": 34,
+    "f": 295.81
+   },
+   "random": {
+    "episodes": 647.84,
+    "hours": 15.997,
+    "demonstrators": 183.3,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0675,
+    "scenes": 71.72,
+    "effScenes": 30,
+    "pairs": 263.18,
+    "tasks": 94.38,
+    "f": 507.75
+   },
+   "randomP95": {
+    "scenes": 77,
+    "effDemonstrators": 99.5
+   },
+   "optimal": {
+    "episodes": 686,
+    "hours": 15.999,
+    "demonstrators": 271,
+    "effDemonstrators": 203.6,
+    "maxShare": 0.02,
+    "scenes": 87,
+    "effScenes": 44.8,
+    "pairs": 401,
+    "tasks": 134,
+    "f": 691.97
+   },
+   "ub": 692.74,
+   "gapPct": 0.11,
+   "exhaustedScenes": 49
+  },
+  {
+   "family": "sort",
+   "label": "Sorting",
+   "budgetH": 16,
+   "preset": "balanced",
+   "familyHours": 34.02,
+   "newest": {
+    "episodes": 593,
+    "hours": 16,
+    "demonstrators": 76,
+    "effDemonstrators": 32.8,
+    "maxShare": 0.1297,
+    "scenes": 39,
+    "effScenes": 20.8,
+    "pairs": 106,
+    "tasks": 34,
+    "f": 372.18
+   },
+   "random": {
+    "episodes": 647.84,
+    "hours": 15.997,
+    "demonstrators": 183.3,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0675,
+    "scenes": 71.72,
+    "effScenes": 30,
+    "pairs": 263.18,
+    "tasks": 94.38,
+    "f": 614.45
+   },
+   "randomP95": {
+    "scenes": 77,
+    "effDemonstrators": 99.5
+   },
+   "optimal": {
+    "episodes": 684,
+    "hours": 15.999,
+    "demonstrators": 271,
+    "effDemonstrators": 200,
+    "maxShare": 0.0247,
+    "scenes": 87,
+    "effScenes": 47.8,
+    "pairs": 401,
+    "tasks": 134,
+    "f": 822.08
+   },
+   "ub": 822.88,
+   "gapPct": 0.1,
+   "exhaustedScenes": 55
+  },
+  {
+   "family": "sort",
+   "label": "Sorting",
+   "budgetH": 16,
+   "preset": "scenes",
+   "familyHours": 34.02,
+   "newest": {
+    "episodes": 593,
+    "hours": 16,
+    "demonstrators": 76,
+    "effDemonstrators": 32.8,
+    "maxShare": 0.1297,
+    "scenes": 39,
+    "effScenes": 20.8,
+    "pairs": 106,
+    "tasks": 34,
+    "f": 259.86
+   },
+   "random": {
+    "episodes": 647.84,
+    "hours": 15.997,
+    "demonstrators": 183.3,
+    "effDemonstrators": 94.9,
+    "maxShare": 0.0675,
+    "scenes": 71.72,
+    "effScenes": 30,
+    "pairs": 263.18,
+    "tasks": 94.38,
+    "f": 415.93
+   },
+   "randomP95": {
+    "scenes": 77,
+    "effDemonstrators": 99.5
+   },
+   "optimal": {
+    "episodes": 684,
+    "hours": 15.998,
+    "demonstrators": 271,
+    "effDemonstrators": 190.1,
+    "maxShare": 0.0359,
+    "scenes": 87,
+    "effScenes": 50.3,
+    "pairs": 401,
+    "tasks": 134,
+    "f": 551.03
+   },
+   "ub": 551.58,
+   "gapPct": 0.1,
+   "exhaustedScenes": 57
   },
   {
    "family": "fold",

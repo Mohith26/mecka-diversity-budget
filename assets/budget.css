@@ -141,3 +141,4 @@ kbd{display:inline-grid;place-items:center;min-width:18px;height:18px;margin:0 2
 @media (max-width:960px){.eg-compareGrid{grid-template-columns:1fr}.eg-kbdHint{display:none}}
 @media (prefers-reduced-motion:reduce){.eg-skel i,.eg-skel b,.eg-skel span,.eg-skelRow,.eg-skelBlock,.eg-skeleton{animation:none}}
 .eg-planHead{display:flex;justify-content:space-between;padding:0 0 6px;color:var(--eg-ink-soft);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.eg-planExport{margin-top:10px}

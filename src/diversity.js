@@ -359,7 +359,7 @@ export function capturePlan(eps, idx, w, tau = TAU, top = 8) {
     rows.push({ scene: s, availSec: a, usedSec: used.get(s) || 0, exhausted: (used.get(s) || 0) >= a - 1e-9, perMin: (gain / d) * 60 });
   }
   rows.sort((x, y) => (y.exhausted - x.exhausted) || (y.perMin - x.perMin));
-  return { medianSec: d, rows: rows.slice(0, top), exhaustedCount: rows.filter((r) => r.exhausted).length, scenes: rows.length };
+  return { medianSec: d, rows: rows.slice(0, top), all: rows, exhaustedCount: rows.filter((r) => r.exhausted).length, scenes: rows.length };
 }
 
 export function buildCut(fam, opts) {
