@@ -385,12 +385,13 @@ function bind() {
     else if (t.classList.contains('eg-savedDel')) { const l = saved(); l.splice(+t.dataset.i, 1); setSaved(l); renderModes(); renderDetail(); toast('Saved cut deleted'); }
   });
   document.addEventListener('keydown', (ev) => {
-    if (ev.target.matches('input, select, textarea') ) { if (ev.key === 'Escape') ev.target.blur(); return; }
+    const tg = ev.target instanceof Element ? ev.target : document.body;
+    if (tg.matches('input, select, textarea')) { if (ev.key === 'Escape') tg.blur(); return; }
     if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
     const k = ev.key;
     if (k === 'j' || k === 'ArrowDown') { ev.preventDefault(); moveRow(1); }
     else if (k === 'k' || k === 'ArrowUp') { ev.preventDefault(); moveRow(-1); }
-    else if (k === 'Enter' && ev.target.matches('tr[data-j]')) openRow(+ev.target.dataset.j);
+    else if (k === 'Enter' && tg.matches('tr[data-j]')) openRow(+tg.dataset.j);
     else if (k === 'Escape') { if (!$('#keys').hidden) toggleKeys(); else if (st.ep) { st.ep = ''; writeHash(); renderLayout(); } }
     else if (k === '/') { ev.preventDefault(); $('#eg-search')?.focus(); }
     else if (k === 'b') rebuild();
