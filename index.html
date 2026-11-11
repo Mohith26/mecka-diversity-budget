@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgoVerse Explorer · Diversity budget (concept)</title>
+<meta name="description" content="Concept feature for the Mecka EgoVerse explorer: pick the most diverse hours of human demonstrations for a budget, with a certified optimality gap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/egoverse.css">
+<link rel="stylesheet" href="assets/budget.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.replace('dark','light')}catch(e){}</script>
+</head>
+<body>
+<main class="eg-page" id="app" aria-busy="true">
+  <section class="eg-explorerSection" id="explorer">
+    <div class="eg-container">
+      <div class="eg-topRow">
+        <a class="eg-backLink" href="https://partners.mecka.ai/egoverse" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Enter The EgoVerse</a>
+        <div class="eg-heroTopRight eg-topRight">
+          <a href="https://mecka.ai" target="_blank" rel="noopener noreferrer" class="eg-poweredByLink">Powered by Mecka AI</a>
+          <button type="button" class="eg-themeToggle" id="theme" aria-label="Toggle theme" title="Toggle theme"></button>
+        </div>
+      </div>
+      <div class="eg-explorerHeader">
+        <div>
+          <p class="eg-explorerEyebrow">Explorer</p>
+          <h2 class="eg-explorerTitle">Episode-level dataset access</h2>
+          <p class="eg-explorerSummary">This explorer mirrors the external uploads workflow researchers are already using internally, but in a cleaner dedicated surface. Filter across labs, tasks, scenes, embodiments, and evaluation modes, then inspect clips and metadata in one place.</p>
+        </div>
+        <div class="eg-explorerStatGrid" id="stats"></div>
+      </div>
+      <div class="eg-filterPanel" id="filters"></div>
+      <div class="eg-modeBar" id="modes"></div>
+      <div id="compare"></div>
+      <div class="eg-explorerLayout" id="layout"></div>
+    </div>
+  </section>
+  <footer class="eg-pageFooter">Unofficial concept demo by Mohith Gajjela. Not affiliated with Mecka. Public data from the EgoVerse database (Mecka lab rows, snapshot <span id="snap">2026-11-11</span>); demonstrator IDs pseudonymized. <a href="https://github.com/Mohith26/mecka-diversity-budget">Source</a></footer>
+  <div class="eg-toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="eg-keys" id="keys" hidden></div>
+</main>
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
