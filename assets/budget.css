@@ -1,6 +1,6 @@
 /* Diversity budget: additions built only from the explorer's own tokens (--eg-*). */
 .eg-page{--font-main:'Outfit';font-family:'Outfit',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
-html,body{margin:0;background:#14100f}
+html,body{margin:0;background:#14100f;font-family:Outfit,system-ui,sans-serif;color:#fdf6ee}
 html.light,html.light body{background:#d8cdc0}
 .dark .eg-page{--eg-orange-deep:#d78659}
 .eg-explorerSection{padding-top:26px;min-height:100vh}
@@ -49,7 +49,7 @@ html.light,html.light body{background:#d8cdc0}
 .eg-explorerLayout{transition:opacity .2s ease}
 .eg-explorerLayout.is-busy{opacity:.45;pointer-events:none}
 .eg-explorerLayout .eg-cutTable td:nth-child(3),.eg-explorerLayout .eg-cutTable th:nth-child(3),.eg-explorerLayout .eg-cutTable td:nth-child(4),.eg-explorerLayout .eg-cutTable th:nth-child(4){display:table-cell}
-.eg-explorerTable td{font-weight:500}
+
 .eg-explorerTable abbr{text-decoration:none;cursor:help}
 .eg-num{width:34px;color:var(--eg-ink-soft);font-variant-numeric:tabular-nums;font-weight:400!important}
 .eg-mono{font-variant-numeric:tabular-nums;letter-spacing:.02em}
@@ -68,7 +68,7 @@ kbd{display:inline-grid;place-items:center;min-width:18px;height:18px;margin:0 2
 /* detail pane */
 .eg-detailPane{max-height:none}
 .eg-detailHeader h3 em,.eg-detailMetaGrid strong em{font-style:normal;color:var(--eg-ink-soft);font-weight:400;font-size:.82rem}
-.eg-detailHeader p{opacity:.6!important}
+.eg-detailHeader p.eg-detailDesc{opacity:.75!important;line-height:1.5}
 .eg-certificate{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:14px 16px;border:1px solid rgba(204,120,72,.22);border-radius:16px;background:rgba(204,120,72,.08)}
 .eg-certificate svg{color:var(--eg-orange);flex:none;margin-top:2px}
 .eg-certificate strong{display:block;font-weight:600;font-size:.92rem}

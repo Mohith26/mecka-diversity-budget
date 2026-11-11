@@ -232,7 +232,7 @@ function summaryPane() {
   const c = cut, o = c.optimal, F = c.F;
   const plan = c.plan;
   const list = saved();
-  return `<div class="eg-detailHeader"><p class="eg-detailEyebrow">Diversity budget</p><h3>${esc(F.label)} · ${st.h}h cut</h3><p>${fmt(o.m.episodes)} episodes chosen from ${fmt(F.eps.length)} to maximize coverage of demonstrators and scenes.</p></div>
+  return `<div class="eg-detailHeader"><p class="eg-detailEyebrow">Diversity budget</p><h3>${esc(F.label)} · ${st.h}h cut</h3><p class="eg-detailDesc">${fmt(o.m.episodes)} episodes chosen from ${fmt(F.eps.length)} to maximize coverage of demonstrators and scenes.</p></div>
     <div class="eg-certificate">${icon('shield', 16)}<div><strong>Certified within ${pct(o.gap)} of the best possible cut</strong><span>Objective ${o.m.f.toFixed(1)} · upper bound ${o.ub.toFixed(1)} from a convex relaxation</span></div></div>
     <div class="eg-detailMetaGrid">
       <div><span>Scenes</span><strong>${o.m.scenes} <em>vs ${c.random.mean.scenes.toFixed(0)} random</em></strong></div>
@@ -307,7 +307,7 @@ function browseSummary() {
   const F = cut.F;
   const ops = new Set(F.eps.map((e) => e.op)).size, sc = new Set(F.eps.filter((e) => e.scene >= 0).map((e) => e.scene)).size;
   return `<div class="eg-detailVideoFrame"><div class="eg-detailVideoFallback">${icon('video', 20)}<span>Select an episode to preview its clip</span></div></div>
-  <div class="eg-detailHeader"><p class="eg-detailEyebrow">${esc(F.label)}</p><h3>${fmt(F.eps.length)} episodes</h3><p>Newest first. Rows marked In cut are in the current ${st.h}h diversity budget.</p></div>
+  <div class="eg-detailHeader"><p class="eg-detailEyebrow">${esc(F.label)}</p><h3>${fmt(F.eps.length)} episodes</h3><p class="eg-detailDesc">Newest first. Rows marked In cut are in the current ${st.h}h diversity budget.</p></div>
   <div class="eg-detailMetaGrid"><div><span>Duration</span><strong>${hm(famSec(F))}</strong></div><div><span>Task labels</span><strong>${fmt(F.taskLabels)}</strong></div><div><span>Demonstrators</span><strong>${fmt(ops)}</strong></div><div><span>Scenes</span><strong>${fmt(sc)}</strong></div></div>`;
 }
 
